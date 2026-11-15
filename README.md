@@ -83,7 +83,7 @@ Para estruturação da rede pessoal fora utilizado:
 
 - Todos os servidores DHCP começam a distribuição a partir do endereço de sufixo `50`. Exemplo: `200.201.56.50`, isso é importante para manter endereços que possamos usar sem que outros dispositivos estejam em uso com o mesmo endereço.
 
-- Todos os servidores fazem a distribuição DNS de mesmo IP para todos os cursos, sendo esse 200.201.0.1 (endereço do servidor de CC), o link para acesso é “unioeste.br”.
+- Todos os servidores fazem a distribuição DNS de mesmo IP para todos os cursos, sendo esse `200.201.0.1` (endereço do servidor de CC), o link para acesso é `unioeste.br`.
 
 - De todos os cursos, somente o curso de Ciência da Computação possui Access-Point para acesso a rede sem fio.
 
@@ -103,7 +103,7 @@ E abaixo segue como fica o acesso ao DNS `http://unioeste.br` na simulação:
 
 - O servidor DHCP local começa sua distribuição a partir do endereço de sufixo `15`. Exemplo: `192.168.0.15`, tal qual na Unioeste, é importante para manter endereços que possam ser utilizados futuramente.
 
-- Foram utilizados dois dispositivos IOT conectados ao Access-Point, foi necessário alterar o SSID da porta 1 do Access-Point para um personalizado que fosse de acordo com o SSID dos demais dispositivos (IOT-AP é o SSID utilizado nos dispositivos e no AP).
+- Foram utilizados dois dispositivos IOT conectados ao Access-Point, foi necessário alterar o SSID da porta 1 do Access-Point para um personalizado que fosse de acordo com o SSID dos demais dispositivos (`IOT-AP` é o SSID utilizado nos dispositivos e no AP).
 
 - Caso seja feita alguma conexão externa (como envio de ICMP para a Unioeste), o roteador local aplica o protocolo NAT, e ao passar pelo roteador é possível ver com a configuração do pacote muda (em referência a IP origem e IP destino) conforme as capturas de tela abaixo: 
 
@@ -200,7 +200,7 @@ Os endereços de conexão ponto a ponto estão todos representados no interno da
 | 192.168.0.0/24  | 178.5.125.2 | PPP1      |
 | 0.0.0.0/0       | 10.0.4.1    | PPP0      |
 
-**Obs.:** Ficou em questão sobre como aplicar as rotas para o PPP0, já que, com o NAT os endereços que desejam ser acessados podem mudar, e talvez não fosse possível ter uma confirmação de entrega de pacote (no cenário de manter somente o `192.168.0.0/24` só seria possível enviar, mas não seria possível receber). Por isso a adição de duas redes com o mesmo gateway.
+**Obs.:** Ficou em questão sobre como aplicar as rotas para o `PPP0`, já que, com o NAT os endereços que desejam ser acessados podem mudar, e talvez não fosse possível ter uma confirmação de entrega de pacote (no cenário de manter somente o `192.168.0.0/24` só seria possível enviar, mas não seria possível receber). Por isso a adição de duas redes com o mesmo gateway.
 
 ## Roteamento dinâmico
 
@@ -212,7 +212,7 @@ Os endereços de conexão ponto a ponto estão todos representados no interno da
 
 Como funciona?
 
-- Antes de ligar o roteador, importante adicionar uma porta Serial em cada um dos roteadores (o modelo utilizado é o 2911, que vem sem as portas Serial). A porta Serial utilizada foi a HWIC-2T que disponibiliza 2 portas.
+- Antes de ligar o roteador, importante adicionar uma porta Serial em cada um dos roteadores (o modelo utilizado é o `2911`, que vem sem as portas Serial). A porta Serial utilizada foi a `HWIC-2T` que disponibiliza 2 portas.
 
 - Após isso é importante definir os endereços locais nos quais os dispositivos farão sua comunicação. Nesse caso, como demonstrado na figura, cada residência possui uma faixa de endereço, segue abaixo uma tabela com a distribuição de IPs.
 
@@ -224,7 +224,7 @@ Como funciona?
 
 **Obs.:** Isso é obviamente apenas um exemplo teórico, não seria possível ter 256 endereços em uma residência, muito menos 65,536.
 
-Importante dizer que, todos os dispositivos contêm o IP gateway respectivo da sua rede. Por exemplo, o PC2 contém o IP gateway 192.168.0.1, distribuído pelo servidor e que é o endereço do roteador local.
+Importante dizer que, todos os dispositivos contêm o IP gateway respectivo da sua rede. Por exemplo, o PC2 contém o IP gateway `192.168.0.1`, distribuído pelo servidor e que é o endereço do roteador local.
 
 Os roteadores possuem na porta Serial o endereço para conexão ponto a ponto, por exemplo, o roteador da primeira residência possui o endereço IP `10.0.0.1/30` em sua porta Serial, o roteador da segunda residência possui os endereços `10.0.0.2/30` e `20.0.0.1/30`. O roteador da terceira residência possui o endereço `20.0.0.2/30`. Importante que se diga que todos os roteadores possuem sua rede local, claro. Para a conexão ponto a ponto funcionar, deve ser estabelecida as seguintes rotas na aba RIP (dentro de cada roteador):
 
