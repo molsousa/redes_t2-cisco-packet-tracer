@@ -8,8 +8,6 @@
 
 ## Sumário
 
-## Sumário
-
 - [Estrutura](#estrutura)
     - [Rede interna da Unioeste](#rede-interna-da-unioeste)
     - [Rede externa](#rede-externa)
